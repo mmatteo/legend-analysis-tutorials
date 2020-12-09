@@ -33,7 +33,8 @@ After adding your keys the process can be sped up further by adding the
 following block into your .ssh/config. (Simply cd to the .ssh/ directory and
 then change the config file).
 
-`Host plus1
+```
+Host plus1
     HostName plus1.hep.ucl.ac.uk
     User your-user-name
     ForwardX11 yes
@@ -49,7 +50,7 @@ then change the config file).
     ProxyCommand ssh plus1 -W %h:22
     ForwardX11 yes
     ForwardX11Trusted yes
-`
+```
 
 plus1 and plus2 are visible from the web and the settings are just related to X
 forwarding. pc204 is not visible from the web and an extra option is needed to
