@@ -24,14 +24,17 @@ Finally make a shell within the virtual environment and load all the software us
 
 (venv) should appear at the start of your command line.
 
+To exit this and return to the normal shell simply type:
+`deactivate`.
+
 ## Raw Waveform
 
 Now in the virtual environment we can work on the data. To do this simply enter:
 `ipython`
 to start an ipython instance. This has the same functionality as a jupyter notebook where we can
-enter a block of code and then run using shift + enter.  
+enter a block of code and then run using shift + enter. This can be exited using `exit()`.
 
-Let's start by plotting a waveform, the code for doing this is given below:
+But for now let's instead start by plotting a waveform, the code for doing this is given below:
 
 ```
 import matplotlib.pyplot as plt
