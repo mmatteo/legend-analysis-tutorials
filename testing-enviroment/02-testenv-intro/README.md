@@ -14,7 +14,7 @@ You will then need to source the config file using:
 
 `source setup.sh`
 
-Navigate to the a production cycle:
+Navigate to a production cycle:
 
 `cd ref-prod/master`
 
