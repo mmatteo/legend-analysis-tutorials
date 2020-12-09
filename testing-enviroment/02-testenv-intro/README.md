@@ -24,7 +24,7 @@ Finally make a shell within the virtual environment and load all the software us
 
 (venv) should appear at the start of your command line.
 
-## Working on the data 
+## Raw Waveform
 
 Now in the virtual environment we can work on the data. To do this simply enter:
 `ipython`
@@ -53,3 +53,29 @@ The `f_raw` line specifies the file we want to work on. To start with let's chan
 `f'/unix/legend/testenv-v02/ref-prod/master/data/prod/raw/V04199A/tier1/th_HS2_lat_psa/th_HS2_lat_psa/char_data-V04199A-th_HS2_lat_psa-run0001-200825T140003_tier1.lh5' `
 although any file in that folder will work.
 Then run the code with shift+enter to make your first waveform!
+
+## Looking at dsp data
+
+The data at LEGEND is processed in tiers. The waveform we just plotted was in the raw tier while the next tier up is dsp. Here various parameters have been extracted from the data. To start with we shall plot one of them which is the mean of the baseline. The do this follow the same steps as above to enter an ipython ennvironment then run the code below:
+
+```
+import matplotlib.pyplot as plt
+import pygama.io.lh5 as lh5
+import numpy as np
+
+f_dsp = f'/unix/legend/testenv-v02/ref-prod/master/data/prod/dsp/V04199A/tier1/th_HS2_lat_psa/th_HS2_lat_psa/char_data-V04199A-th_HS2_lat_psa-run0001-200825T140003_tier1.lh5'
+
+sto = lh5.Store()
+tb_data = sto.read_object("/raw",f_dsp)
+
+bl_all = tb_data[0]['bl'].nda
+bins = np.linspace(10000, 20000, 10001)
+ 
+plt.figure()
+plt.hist(bl_all, bins=bins, density=True, histtype='step')
+plt.xlabel("baseline mean")
+plt.ylabel("event number")
+plt.yscale("log")
+plt.show()
+```
+This should return a histogram of the baseline mean.
