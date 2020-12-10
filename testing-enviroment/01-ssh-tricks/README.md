@@ -11,7 +11,9 @@ The simplest way to do this is to use
 
 and then 
 
-`ssh pc204`
+`ssh pc204`.
+
+You can logout by simply typing `logout`.
 
 ## Generating keys
 
