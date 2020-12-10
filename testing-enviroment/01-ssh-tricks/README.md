@@ -11,7 +11,9 @@ The simplest way to do this is to use
 
 and then 
 
-`ssh pc204`
+`ssh pc204`.
+
+You can logout by simply typing `logout`.
 
 ## Generating keys
 
@@ -31,7 +33,7 @@ To copy the public key onto the cluster use
 
 After adding your keys the process can be sped up further by adding the
 following block into your .ssh/config. (Simply cd to the .ssh/ directory and
-then change the config file).
+then open the config file with your prefered editor).
 
 ```
 Host plus1
