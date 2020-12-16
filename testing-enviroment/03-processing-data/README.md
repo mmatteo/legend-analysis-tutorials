@@ -17,6 +17,8 @@ Now navigate to `user-prod` and create a new production cycle using:
 The apostrophe's on the whoami should be backwards quotation marks ``. 
 This is a bash command that will give back your username. In the future you can change 'test' to whatever the goal of the production cycle will be. So the naming convention should be: `username-goalOfTheCycle-v01`.
 
+Finally run `testenv-install.sh` to install all the nessary code.
+
 You should now be able to find you new production cycle in the `user-prod`.
 
 ## Processing Data
