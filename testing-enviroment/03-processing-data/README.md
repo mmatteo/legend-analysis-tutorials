@@ -28,4 +28,4 @@ Inide your new production cycle you can run the script:
 `testenv-r2d.sh -m 100 config.json ../../ref-prod/master/data/meta/keylists/V04199A-th_HS2_lat_psa-all.txt`
 
 to process the data in the reference production.
-The number in the command (100 here) controls the number of waveforms to be processed. In the next tutorial we will go through how to customize your production. 
+The number in the command (100 here) controls the number of waveforms to be processed. Here we are only running on a small fraction of the number of waveforms in the file, in the future you will be working with many more. In the next tutorial we will go through how to customize your production. 
