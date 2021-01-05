@@ -1,4 +1,4 @@
-### Introduction to the Processing Chain
+# Introduction to the Processing Chain
 
 Here is an example processing chain for raw to dsp. 
 
@@ -53,4 +53,6 @@ At the top we first specify the final outputs of processing the data. In this ca
 
 The next section are the processors themselves which are arranged in a chain. Each is defined by its outputs; the first outputs the mean and standard deviation of the baseline. Inside the curly braces we then specify the function that will return these outputs in this case the "mean_stdev" function and where it is found "pygama.dsp.processors". This could be a pygama function but it could equally be a general function from numpy etc. such as in the second processor "wf_blsub" where numpy.subtract is used.
 
+The args function is where the inputs and outputs are specified. As can be seen from the first processor it is also possible to take slices of the input to be processed. The units of the input can also be specified as in the "wf_trap".
+The last 2 general fields are the prereqs which specify the inputs (without any slicing) and the units. 
 
