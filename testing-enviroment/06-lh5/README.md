@@ -5,7 +5,7 @@
 ### Raw
 
 This file is a mix of data types. stat contains various info about the processing e.g cputime etc.
-`
+```
 .
 ├── stat    
 └── raw
@@ -24,19 +24,19 @@ This file is a mix of data types. stat contains various info about the processin
      ├── wf_max
      └── wf_std
      
-`
+```
 
 ### DSP
 
-This file is generally a table as each waveform has only one value. This will change if you output parameters with other datatypes such as the 'wf_trap'. dsp_info contains various info about the processing e.g pygama version etc.
-`
+This file is generally a table as each waveform has only one value. This will change if you output parameters with other datatypes such as the 'wf_trap'. dsp_info contains various info about the processing e.g pygama version etc. An example is shown below
+```
 .
 ├── dsp_info    
 └── raw
      ├──  bl
      ├──  bl_sig
      └──  trapEmax
-`
+```
 
 ### Navigation 
 
