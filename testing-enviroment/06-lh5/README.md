@@ -38,6 +38,8 @@ This file is generally a table as each waveform has only one value. This will ch
      └──  trapEmax
 ```
 
+## Commands
+
 ### Navigation 
 
 For ease of use `sto=lh5.Store()`.
