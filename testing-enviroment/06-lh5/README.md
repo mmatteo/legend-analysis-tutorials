@@ -44,7 +44,7 @@ For ease of use `sto=lh5.Store()`.
 
 `sto.ls(self, lh5_file, group_path='')`  This works like the ls command in unix. It can be used to find what is in the file. For example on the raw file we can run `sto.ls(your_file, 'raw/waveform')` to output the parameters within waveform: dt,t0 and values.
 
-`lh5.Store.read_n_rows(self, name, lh5_file)` this will return the number of waveforms in the file. Name is the path e.g. raw.
+`sto.read_n_rows(self, name, lh5_file)` this will return the number of waveforms in the file. Name is the path e.g. raw.
 
 `lh5.get_lh5_datatype_name(obj)` This tells us the format of the lh5 object. You will have to run the read_object command first and then pass the result to this to get the type. For example if we run 
 ```
