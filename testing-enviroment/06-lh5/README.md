@@ -48,10 +48,10 @@ For ease of use `sto=lh5.Store()`.
 
 `lh5.get_lh5_datatype_name(obj)` This tells us the format of the lh5 object. You will have to run the read_object command first and then pass the result to this to get the type. For example if we run 
 ```
-sto.read_object(data_dsp[0])[0]
+sto.read_object(dsp_file)[0]
 lh5.get_lh5_datatype_name(tb)
 ```
-It will tell us that this data is stored in a table.
+It will tell us that this data is stored in a table. 
 
 ### Getting Data
 
