@@ -46,7 +46,12 @@ For ease of use `sto=lh5.Store()`.
 
 `lh5.Store.read_n_rows(self, name, lh5_file)` this will return the number of waveforms in the file. Name is the path e.g. raw.
 
-
+`lh5.get_lh5_datatype_name(obj)` This tells us the format of the lh5 object. You will have to run the read_object command first and then pass the result to this to get the type. For example if we run 
+```
+sto.read_object(data_dsp[0])[0]
+lh5.get_lh5_datatype_name(tb)
+```
+It will tell us that this data is stored in a table.
 
 ### Getting Data
 
