@@ -44,7 +44,7 @@ This file is generally a table as each waveform has only one value. This will ch
 
 For ease of use `sto=lh5.Store()`.
 
-`sto.ls(self, lh5_file, group_path='')`  This works like the ls command in unix. It can be used to find what is in the file. For example on the raw file we can run `sto.ls(your_file, 'raw/waveform')` to output the parameters within waveform: dt,t0 and values.
+`sto.ls(self, lh5_file, group_path='')`  This works like the ls command in unix. It can be used to find what is in the file. For example on the raw file we can run `sto.ls(your_file, 'raw/waveform/')` to output the parameters within waveform: dt,t0 and values.
 
 `sto.read_n_rows(self, name, lh5_file)` this will return the number of waveforms in the file. Name is the path e.g. raw.
 
@@ -65,7 +65,7 @@ These two commands can be grouped together:
 
 `lh5.load_nda(f_list, par_list, tb_in)` 
 
-These will take a file list which may include wildcards for example `th_HS2_lat_psa/th_HS2_lat_psa/*.lh5`. They will return all the values in all the files for the parameters specified either as an array or as a dataframe.
+These will take a file list which may include wildcards for example `th_HS2_lat_psa/th_HS2_lat_psa/*.lh5`. They will return all the values in all the files for the parameters specified either as a dictionary of arrays or as a dataframe.
 
 `lh5.Table.get_dataframe(get_dataframe(self, *cols, copy=False))` Useful for dsp data where the format will generally be a table. 
 
