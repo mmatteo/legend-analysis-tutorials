@@ -9,20 +9,20 @@ This file is a mix of data types. stat contains various info about the processin
 .
 ├── stat    
 └── raw
-     ├── baseline
-     ├── channel
-     ├── energy
-     ├── ievt
-     ├── numtraces
-     ├── packet_id
-     ├── timestamp
-     ├── tracelist
-     ├── waveform
-     │   ├── dt
+     ├── baseline        # fpga baseline
+     ├── channel         # right now, index of the trigger (trace)
+     ├── energy          # fpga energy
+     ├── ievt            # index of event
+     ├── numtraces       # number of triggered adc channels
+     ├── packet_id       # packet index in file
+     ├── timestamp       # time since beginning of file
+     ├── tracelist       # list of triggered adc channels
+     ├── waveform        # digitizer data
+     │   ├── dt          # sampling period (ns) - 16
      │   ├── t0
-     │   └── values
-     ├── wf_max
-     └── wf_std
+     │   └── values      
+     ├── wf_max          # ultra-simple np.max energy estimation
+     └── wf_std          # ultra-simple np.std noise estimation
      
 ```
 
