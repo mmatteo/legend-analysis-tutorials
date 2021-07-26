@@ -1,6 +1,7 @@
 # SSH Tutorial
 
-## Basics
+## LINUX
+###Basics
 
 The first thing to do is to 'ssh' to the hep cluster and then to pc204 where
 we shall be working.
@@ -15,7 +16,7 @@ and then
 
 You can logout by simply typing `logout`.
 
-## Generating keys
+### Generating keys
 
 To make this process easier and to stop you having to enter your password
 every time you log in we can generate a set of keys. From your home directory
@@ -29,7 +30,7 @@ To copy the public key onto the cluster use
 
 `ssh-copy-id -i ~/.ssh/id_ed25519.pub plus1`
 
-## Even quicker method
+### Even quicker method
 
 After adding your keys the process can be sped up further by adding the
 following block into your .ssh/config. (Simply cd to the .ssh/ directory and
@@ -57,6 +58,9 @@ Host plus1
 plus1 and plus2 are visible from the web and the settings are just related to X
 forwarding. pc204 is not visible from the web and an extra option is needed to
 do a ssh tunnel through plus1. Change the username field.
+
+## Through VCODE
+https://code.visualstudio.com/docs/remote/ssh-tutorial
 
 ## Adding keys to github
 
