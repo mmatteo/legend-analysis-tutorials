@@ -61,7 +61,11 @@ forwarding. pc204 is not visible from the web and an extra option is needed to
 do a ssh tunnel through plus1. Change the username field.
 
 ## Through VCODE
+
+If you're usig windows it is probably easiest to work through VS code. 
+A walkthrough of how to set up ssh for this is found here:
 https://code.visualstudio.com/docs/remote/ssh-tutorial
+Ignore the parts about Azure and setting up hosts. 
 
 ## Adding keys to github
 
