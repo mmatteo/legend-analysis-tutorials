@@ -27,6 +27,8 @@ Finally make a shell within the virtual environment and load all the software us
 To exit this and return to the normal shell simply type:
 `deactivate`.
 
+## Jupyter Notebooks
+
 It is probably easiest to work in jupyter notebooks. To do this you will first need to add the 
 virtual environment using: `python -m ipykernel install --user --name=testenv`.
 
@@ -42,9 +44,9 @@ http://localhost:8888/ where the number is the same as the second number above.
 
 ## Raw Waveform
 
-In a new notebook we can start loading the waveforms. Make sure the notebook is using the kernel you added above.
-Alternatively you can use: `ipython`
-to start an ipython instance. This has the same functionality as a jupyter notebook where we can
+
+For the moment we can work just in the console, you can use: `ipython` to start an ipython instance. 
+This has the same functionality as a jupyter notebook where we can
 enter a block of code and then run using shift + enter. This can be exited using `exit()`. 
 
 Let's start by plotting a waveform, the code for doing this is given below:
