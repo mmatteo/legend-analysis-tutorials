@@ -62,10 +62,11 @@ do a ssh tunnel through plus1. Change the username field.
 
 ## Through VCODE
 
-If you're usig windows it is probably easiest to work through VS code. 
+If you're using windows it is probably easiest to work through VS code. 
 A walkthrough of how to set up ssh for this is found here:
 https://code.visualstudio.com/docs/remote/ssh-tutorial
 Ignore the parts about Azure and setting up hosts. 
+Also https://code.visualstudio.com/docs/datascience/jupyter-notebooks may be useful. 
 
 ## Adding keys to github
 
