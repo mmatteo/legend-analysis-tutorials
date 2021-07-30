@@ -5,7 +5,7 @@
 ### Raw
 
 This file is a mix of data types. stat contains various info about the processing e.g cputime etc.
-```json
+```console
 .
 ├── stat    
 └── raw
@@ -29,7 +29,7 @@ This file is a mix of data types. stat contains various info about the processin
 ### DSP
 
 This file is generally a table as each waveform has only one value. This will change if you output parameters with other datatypes such as the 'wf_trap'. dsp_info contains various info about the processing e.g pygama version etc. An example is shown below
-```json
+```console
 .
 ├── dsp_info    
 └── raw
