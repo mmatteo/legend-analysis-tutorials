@@ -11,7 +11,7 @@ This tutorial provides an introduction on how to access to LEGEND data and
 retrieve objects such as waveforms or DSP parameters. It also shows how to plot
 these objects
 
-# processing-data/
+## processing-data/
 
 This tutorial shows how to manually process the `daq` files into `raw` and then `dsp`. 
 Instruction on how to use the automatic tools for data production can be found
