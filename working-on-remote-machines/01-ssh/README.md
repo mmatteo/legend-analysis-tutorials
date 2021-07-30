@@ -7,7 +7,9 @@
 Direct connection to a remote machine with public IP is typically handled
 through an ssh connection which is established through the command
 
-`ssh your-username@remote-host-address`
+```console
+ssh your-username@remote-host-address
+```
 
 Useful options that can be specified are `-X` and `-Y` which allow to export
 graphical session from the remote machine.
@@ -18,13 +20,17 @@ ssh keys can be used to simplify the establishment of an ssh connection and
 avoid entering your password at every log-in. To create an ssh key go into your
 home directory (on your local machine) and execute:
 
-`ssh-keygen -t ed25519 -C your-email-address`
+```console
+ssh-keygen -t ed25519 -C your-email-address
+```
 
 you can simply save this to the default address and leave the password blank
 or short for ease of use.
 To copy the public key onto the cluster use
 
-`ssh-copy-id -i ~/.ssh/id_ed25519.pub your-username@remote-host-address`
+```console
+ssh-copy-id -i ~/.ssh/id_ed25519.pub your-username@remote-host-address
+```
 
 ### .ssh/config
 
@@ -36,7 +42,7 @@ how to use to tunnel to host2, a machine which does not have a public IP and is
 reahable only through host1. This is a typical situation as computing clusters
 provide access to their internal network through gateway machines.
 
-```
+```console
 Host host1-name
     HostName host1-address
     User your-user-name
