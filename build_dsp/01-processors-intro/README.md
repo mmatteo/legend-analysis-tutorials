@@ -36,7 +36,9 @@ from ._processors.my_new_process import new_function
 
 will be needed. Next navigate all the way back up to your production cycle. Then to `data/meta/dsp`. In this file is `processor_list.json`. As the name implies this is a list of all the processors that will be used in the data processing. For this simple example we can just change the first block. Only the `function` line needs changing to our new processor e.g. 
 
-`"function": "new_mean_stdev",`.
+```json
+"function": "new_mean_stdev",
+```
 
 We are now ready to process the data with the new processor using the same process as shown [before](https://github.com/mmatteo/legend-analysis-tutorials/tree/main/testing-enviroment/03-processing-data#processing-data).
 
