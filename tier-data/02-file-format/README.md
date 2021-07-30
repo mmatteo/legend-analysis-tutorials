@@ -49,7 +49,7 @@ For ease of use `sto=lh5.Store()`.
 `sto.read_n_rows(self, name, lh5_file)` this will return the number of waveforms in the file. Name is the path e.g. raw.
 
 `lh5.get_lh5_datatype_name(obj)` This tells us the format of the lh5 object. You will have to run the read_object command first and then pass the result to this to get the type. For example if we run 
-```
+```py
 sto.read_object(dsp_file)[0]
 lh5.get_lh5_datatype_name(tb)
 ```
@@ -61,13 +61,17 @@ It will tell us that this data is stored in a table.
 
 
 These two commands can be grouped together:
-`lh5.load_dfs(f_list, par_list, tb_in)`
-
-`lh5.load_nda(f_list, par_list, tb_in)` 
+```py
+lh5.load_dfs(f_list, par_list, tb_in)`
+lh5.load_nda(f_list, par_list, tb_in)` 
+```
 
 These will take a file list which may include wildcards for example `th_HS2_lat_psa/th_HS2_lat_psa/*.lh5`. They will return all the values in all the files for the parameters specified either as a dictionary of arrays or as a dataframe.
 
-`lh5.Table.get_dataframe(get_dataframe(self, *cols, copy=False))` Useful for dsp data where the format will generally be a table. 
+```py
+lh5.Table.get_dataframe(get_dataframe(self, *cols, copy=False))
+```
+Useful for dsp data where the format will generally be a table. 
 
 
 
