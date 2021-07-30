@@ -48,30 +48,19 @@ The second number is your local port. To access the jupyter notebook go to your 
 http://localhost:8888/ where the number is the same as the second number above.
 
 ## load software
-
-To be updated!
-
 First log in to the server
 
 `ssh pc204`
 
-then navigate to the test env
+and then source a setup file
 
-`cd /unix/legend/testenv-v02`
+`source /unix/legend/legend-prodenv/setup.sh`
 
-You will then need to source the config file using:
+You can now load the LEGEND software from a specific production cycle using, e.g.:
 
-`source setup.sh`
+`prodenv-load-sw /unix/legend/legend-prodenv/prod-ref/v01/config.json`
 
-Navigate to a production cycle:
+This command will load a virtual container using `singularity`. To unload the software environment use `exit` or `CTRL-D`.
 
-`cd ref-prod/master`
 
-Finally make a shell within the virtual environment and load all the software using:
 
-`testenv-bash.sh config.json`
-
-(venv) should appear at the start of your command line.
-
-To exit this and return to the normal shell simply type:
-`deactivate`.

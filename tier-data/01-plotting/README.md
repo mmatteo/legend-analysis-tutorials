@@ -1,6 +1,6 @@
 ## Raw Waveform
 
-For the moment we can work just in the console, you can use: `ipython` to start an ipython instance. 
+For the moment we can work using the console, you can use: `ipython` to start an ipython instance. 
 This has the same functionality as a jupyter notebook where we can
 enter a block of code and then run using shift + enter. This can be exited using `exit()`. 
 
