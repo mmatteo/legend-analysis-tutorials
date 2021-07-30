@@ -6,7 +6,7 @@ enter a block of code and then run using shift + enter. This can be exited using
 
 Let's start by plotting a waveform, the code for doing this is given below:
 
-```
+```py
 import matplotlib.pyplot as plt
 import pygama.io.lh5 as lh5
 import numpy as np
@@ -33,7 +33,7 @@ This method works but is a bit clunky. A better way of viewing waveforms using t
 ## Looking at dsp data
 The data at LEGEND is processed in tiers. The waveform we just plotted was in the raw tier while the next tier up is dsp. Here various parameters have been extracted from the data. To start with we shall plot one of them which is the mean of the baseline. The do this follow the same steps as above to enter an ipython ennvironment then run the code below:
 
-```
+```py
 import matplotlib.pyplot as plt
 import pygama.io.lh5 as lh5
 import numpy as np
