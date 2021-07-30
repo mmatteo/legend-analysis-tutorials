@@ -62,8 +62,8 @@ It will tell us that this data is stored in a table.
 
 These two commands can be grouped together:
 ```py
-lh5.load_dfs(f_list, par_list, tb_in)`
-lh5.load_nda(f_list, par_list, tb_in)` 
+lh5.load_dfs(f_list, par_list, tb_in)
+lh5.load_nda(f_list, par_list, tb_in) 
 ```
 
 These will take a file list which may include wildcards for example `th_HS2_lat_psa/th_HS2_lat_psa/*.lh5`. They will return all the values in all the files for the parameters specified either as a dictionary of arrays or as a dataframe.
