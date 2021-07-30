@@ -3,8 +3,10 @@
 # SSH
 The LEGEND SSH gateways are:
 
-`legend-login1@infn.lngs.infn.it`
-`legend-login2@infn.lngs.infn.it`
+```
+legend-login1@infn.lngs.infn.it
+legend-login2@infn.lngs.infn.it
+```
 
 You can also use the alias `legend-login` which assign you automatically to one of the two machines.
 
