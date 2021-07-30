@@ -12,7 +12,7 @@ You can also use the alias `legend-login` which assign you automatically to one 
 
 
 You can connect to them using: 
-``console
+```console
 ssh your-username@legend-login.lngs.infn.it
 ```
 
