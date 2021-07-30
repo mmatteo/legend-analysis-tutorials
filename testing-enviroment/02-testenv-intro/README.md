@@ -1,49 +1,4 @@
-# Intoduction to the Test Environment
-
-## Setting Up
-
-First log in to the server
-
-`ssh pc204`
-
-then navigate to the test env
-
-`cd /unix/legend/testenv-v02`
-
-You will then need to source the config file using:
-
-`source setup.sh`
-
-Navigate to a production cycle:
-
-`cd ref-prod/master`
-
-Finally make a shell within the virtual environment and load all the software using:
-
-`testenv-bash.sh config.json`
-
-(venv) should appear at the start of your command line.
-
-To exit this and return to the normal shell simply type:
-`deactivate`.
-
-## Jupyter Notebooks
-
-It is probably easiest to work in jupyter notebooks. To do this you will first need to add the 
-virtual environment using: `python -m ipykernel install --user --name=testenv`.
-
-Now you can set up a jupyter notebook instance using:
-`jupyter notebook --port=8880 --no-browser`
-You should use a different number for the port so no one is using the same port. Any number between 
-8000 and 9000 should work. 
-In a seperate tab you will need to enter the command:
-`ssh -N -L 8880:localhost:8888 pc204`
-to set up port forwarding where the first number should be the same as the port in the previous command.
-The second number is your local port. To access the jupyter notebook go to your web browser and navigate to 
-http://localhost:8888/ where the number is the same as the second number above.
-
 ## Raw Waveform
-
 
 For the moment we can work just in the console, you can use: `ipython` to start an ipython instance. 
 This has the same functionality as a jupyter notebook where we can
@@ -76,7 +31,6 @@ Then run the code with shift+enter to make your first waveform! You can look at 
 This method works but is a bit clunky. A better way of viewing waveforms using the waveform browser can be found here: https://github.com/legend-exp/pygama/blob/master/tutorials/WaveformBrowserTutorial.ipynb
 
 ## Looking at dsp data
-
 The data at LEGEND is processed in tiers. The waveform we just plotted was in the raw tier while the next tier up is dsp. Here various parameters have been extracted from the data. To start with we shall plot one of them which is the mean of the baseline. The do this follow the same steps as above to enter an ipython ennvironment then run the code below:
 
 ```
