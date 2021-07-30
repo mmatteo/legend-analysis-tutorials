@@ -3,17 +3,23 @@
 # SSH
 SSH gateways are:
 
-`plus1.hep.ucl.ac.uk`
-`plus2.hep.ucl.ac.uk`
+```
+plus1.hep.ucl.ac.uk
+plus2.hep.ucl.ac.uk
+```
 
 You can connect to them using: 
-`ssh your-username@plus1.hep.ucl.ac.uk`
+```console
+ssh your-username@plus1.hep.ucl.ac.uk
+```
 
 After conneting to `plus1` or `plus2`, you can accesso to all UCL machines, including those in the batch farm. UCL LEGEND users are currently using as interactive machine `pc204`, which can be directly access from the gateways using:
-`ssh pc204`
+```console
+ssh pc204
+```
 
 Here is an example of `.ssh/config` file:
-```
+```console
 Host plus1
     HostName plus1.hep.ucl.ac.uk
     User your-user-name
