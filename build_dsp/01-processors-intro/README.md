@@ -10,7 +10,7 @@ All the processors are found in:
 You can simply add a new processor into this file. 
 For demonstration lets create a new way of calculating the mean and standard deviation of the baseline. 
 
-```
+```py
 import numpy as np
 from numba import guvectorize
 from math import sqrt
@@ -30,7 +30,9 @@ All the processors in pygama are written as these void functions.
 Now we need to let the scripts know where to find this new processor.
 The first place that needs to be changed is the `processors.py` in the `dsp` directory. The line:
 
-`from ._processors.my_new_process import new_function`
+```py
+from ._processors.my_new_process import new_function
+```
 
 will be needed. Next navigate all the way back up to your production cycle. Then to `data/meta/dsp`. In this file is `processor_list.json`. As the name implies this is a list of all the processors that will be used in the data processing. For this simple example we can just change the first block. Only the `function` line needs changing to our new processor e.g. 
 
