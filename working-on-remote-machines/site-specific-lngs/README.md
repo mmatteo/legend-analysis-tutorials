@@ -10,12 +10,14 @@ You can also use the alias `legend-login` which assign you automatically to one 
 
 
 You can connect to them using: 
-`ssh your-username@legend-login.lngs.infn.it`
+``console
+ssh your-username@legend-login.lngs.infn.it
+```
 
 After conneting to our LEGEND login-in machines you can drectly access to the common softaware installation, the data and the batch farm. The log-in machines are intended for interactive usage, computationally intensitve jobs should be submitted to u-lite.
 
 Here is an example of `.ssh/config` file:
-```
+```console
 Host legend-login1
     HostName legend-login1.lngs.infn.it
     User your-user-name
