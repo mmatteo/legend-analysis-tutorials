@@ -8,7 +8,7 @@ Direct connection to a remote machine with public IP is typically handled
 through an ssh connection which is established through the command
 
 ```console
-ssh your-username@remote-host-address
+ssh username@remote-host-address
 ```
 
 Useful options that can be specified are `-X` and `-Y` which allow to export
@@ -29,7 +29,7 @@ or short for ease of use.
 To copy the public key onto the cluster use
 
 ```console
-ssh-copy-id -i ~/.ssh/id_ed25519.pub your-username@remote-host-address
+ssh-copy-id -i ~/.ssh/id_ed25519.pub Gusername@remote-host-address
 ```
 
 ### .ssh/config
@@ -44,11 +44,13 @@ provide access to their internal network through gateway machines.
 
 ```console
 Host host1-name
+    User username
     HostName host1-address
     User your-user-name
     ForwardX11 yes
     ForwardX11Trusted yes
 Host host2-name
+    User username
     HostName host2-address
     User your-user-name
     ProxyCommand ssh host1 -W %h:22
