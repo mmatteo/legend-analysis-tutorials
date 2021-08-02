@@ -41,7 +41,7 @@ Host plus1
     ForwardX11Trusted yes
 ```
 
-## load software
+## Load software
 The disk space allocated for LEGEND is located under `/unix/legend/`. Our software is developed and run through singularity containers. To load a specifc container and software version use:
 
 ```console
@@ -51,7 +51,7 @@ To unload the software environment use `exit` or `CTRL-D`.
 
 Info on the software versions available can be found in `/unix/legend/software/README`
 
-## Jupyter Lab and Notebooks
+## Jupyter lab and notebooks
 
 ###  If your local machine is a linux system
 After setting the ssh config file above, you can open a notebook on pc204 using this command:
