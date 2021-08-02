@@ -49,14 +49,18 @@ def main():
 
     # config file
     f_config  = args.config_file
-    if not os.path.exists(f_config) and args.step == 'raw_to_dsp':
+    if  args.step == 'raw_to_dsp' and not os.path.exists(f_config):
         print('  Error: config file does not exist')
         exit()
-    with open(f_config) as f:
-        config_dic = json.load(f, object_pairs_hook=OrderedDict)
 
-    if   args.step == 'daq_to_raw': process_flashcam(f_input, f_output, n_max=args.max_ev_num, verbose=args.verbose, overwrite=False)
-    elif args.step == 'raw_to_dsp': raw_to_dsp(f_input, f_output, config_dic, n_max=args.max_ev_num, verbose=args.verbose, overwrite=False)
+    if   args.step == 'daq_to_raw': 
+        process_flashcam(f_input, f_output, n_max=args.max_ev_num, verbose=args.verbose, overwrite=False)
+
+    elif args.step == 'raw_to_dsp': 
+        with open(f_config) as f:
+            config_dic = json.load(f, object_pairs_hook=OrderedDict)
+        raw_to_dsp(f_input, f_output, config_dic, n_max=args.max_ev_num, verbose=args.verbose, overwrite=False)
+
     else:                           print('  Error: data produciton step not known');
 
 if __name__=="__main__":
