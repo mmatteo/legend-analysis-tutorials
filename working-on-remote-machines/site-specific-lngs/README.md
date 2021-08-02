@@ -1,4 +1,4 @@
-# HEP cluster at UCL
+# LNGS computing cluster
 
 # SSH
 The LEGEND SSH gateways are:
