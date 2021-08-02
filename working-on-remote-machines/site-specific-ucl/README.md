@@ -50,7 +50,7 @@ Info on the software versions available can be found in `/unix/legend/software/R
 
 ## Jupyter Lab and Notebooks
 
-###  If you local machine is a linux system
+###  If your local machine is a linux system
 After setting the ssh config file above, you can open a notebook on pc204 using this command:
 
 ```console
@@ -58,7 +58,7 @@ ssh pc204 -L MYPORT:localhost:MYPORT  'PYTHONUSERBASE=/unix/legend/software/pyga
 ```
 where MYPORT is a number of 4 digits above 8800. 
 
-###  If you local machine is a linux system (Version 10)
+###  If your local machine is a linux system (Version 10)
 Open two powershells. In the first one run the command
 
 ```console
