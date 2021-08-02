@@ -10,7 +10,7 @@ plus2.hep.ucl.ac.uk
 
 You can connect to them using: 
 ```console
-ssh your-username@plus1.hep.ucl.ac.uk
+ssh username@plus1.hep.ucl.ac.uk
 ```
 
 After conneting to `plus1` or `plus2`, you can accesso to all UCL machines, including those in the batch farm. UCL LEGEND users are currently using as interactive machine `pc204`, which can be directly access from the gateways using:
@@ -21,16 +21,19 @@ ssh pc204
 Here is an example of `.ssh/config` file for linux:
 ```console
 Host plus1
+    User username
     HostName plus1.hep.ucl.ac.uk
     User your-user-name
     ForwardX11 yes
     ForwardX11Trusted yes
   Host plus2
+    User username
     HostName plus2.hep.ucl.ac.uk
     User your-user-name
     ForwardX11 yes
     ForwardX11Trusted yes
   Host pc204
+    User username
     HostName pc204
     User your-user-name
     ProxyCommand ssh plus1 -W %h:22
