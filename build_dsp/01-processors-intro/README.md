@@ -18,9 +18,9 @@ from math import sqrt
 @guvectorize(["void(float32[:], float32[:], float32[:])",
               "void(float64[:], float64[:], float64[:])"],
              "(n)->(),()", nopython=True, cache=True)
-def mean_stdev(wf, mean, stdev):
+def mean_stdev(w_in, mean, stdev):
     """
-    Calculate the mean and standard deviation of a vector using Welford's method
+    Calculate the mean and standard deviation of a vector using simple numpy operations
     """
     mean = np.mean(wf)
     stdev = np.stdev(wf)
