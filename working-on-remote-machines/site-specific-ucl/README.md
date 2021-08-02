@@ -70,7 +70,7 @@ it is because you have a Jupyter kernel already runnig. In this case, you can ei
 ssh pc204 "killall -9 jupyter-lab"
 ```
 
-###  If your local machine is a linux system (Version 10)
+###  If your local machine is a windows system (Version 10)
 Open two powershells. In the first one run the command
 
 ```console
