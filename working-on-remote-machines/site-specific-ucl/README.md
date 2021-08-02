@@ -1,6 +1,6 @@
 # HEP cluster at UCL
 
-# SSH
+# SSH 
 SSH gateways are:
 
 ```
@@ -18,7 +18,7 @@ After conneting to `plus1` or `plus2`, you can accesso to all UCL machines, incl
 ssh pc204
 ```
 
-Here is an example of `.ssh/config` file:
+Here is an example of `.ssh/config` file for linux:
 ```console
 Host plus1
     HostName plus1.hep.ucl.ac.uk
@@ -38,35 +38,43 @@ Host plus1
     ForwardX11Trusted yes
 ```
 
-## Jupyter Notebooks
-
-To work in jupyter notebooks you will first need to add the 
-virtual environment using: `python -m ipykernel install --user --name=testenv`.
-
-Now you can set up a jupyter notebook instance using:
-`jupyter notebook --port=8880 --no-browser`
-You should use a different number for the port so no one is using the same port. Any number between 
-8000 and 9000 should work. 
-In a seperate tab you will need to enter the command:
-`ssh -N -L 8880:localhost:8888 pc204`
-to set up port forwarding where the first number should be the same as the port in the previous command.
-The second number is your local port. To access the jupyter notebook go to your web browser and navigate to 
-http://localhost:8888/ where the number is the same as the second number above.
-
 ## load software
-First log in to the server
+The disk space allocated for LEGEND is located under `/unix/legend/`. Our software is developed and run through singularity containers. To load a specifc container and software version use:
 
-`ssh pc204`
+```console
+/unix/legend/software/load-v01.sh
+```
+To unload the software environment use `exit` or `CTRL-D`.
 
-and then source a setup file
+Info on the software versions available can be found in `/unix/legend/software/README`
 
-`source /unix/legend/legend-prodenv/setup.sh`
+## Jupyter Lab and Notebooks
 
-You can now load the LEGEND software from a specific production cycle using, e.g.:
+###  If you local machine is a linux system
+After setting the ssh config file above, you can open a notebook on pc204 using this command:
 
-`prodenv-load-sw /unix/legend/legend-prodenv/prod-ref/v01/config.json`
+```console
+ssh pc204 -L MYPORT:localhost:MYPORT  'PYTHONUSERBASE=/unix/legend/software/pygama-v01/local singularity run  -B /run/user/$(id -u) -B /unix /unix/legend/software/containers/this.sif jupyter lab --no-browser --notebook-dir /unix/legend --port MYPORT --port-retries 0'
+```
+where MYPORT is a number of 4 digits above 8800. 
 
-This command will load a virtual container using `singularity`. To unload the software environment use `exit` or `CTRL-D`.
+###  If you local machine is a linux system (Version 10)
+Open two powershells. In the first one run the command
+
+```console
+ssh -L PORT1:pc204:22 username@plus1.hep.ucl.ac.uk
+```
+to esablish an port forwarding of the ssh port of pc204 on your local host. Then run in the second powershell:
+
+```console
+ssh -p PORT1 username@localhost -L PORT2:localhost:PORT2 "PYTHONUSERBASE=/unix/legend/software/pygama-v01/local singularity run -B /unix /unix/legend/software/containers/this.sif jupyter lab --no-browser --notebook-dir /home/username --port PORT2 --port-retries 0"
+```
+In the commands above, you must replace PORT1 and PORT2 with two numbers of 4 digits above 8800 and username with your linux username on the UCL hep cluster.
+
+### ERROR: the notebook server could not be started because port ???? is not available
+If you see this error, it is because you have a Jupyter kernel runnig already. In this case, you can either connect to pc204 and kill it, or kill it through ssh using a command such as:
+
+ssh -p PORT1 username@localhost -L PORT2:localhost:PORT2 "ssh -p PORT1 username@localhost -L PORT2:localhost:PORT2 "pkill -u username" 
 
 
 
