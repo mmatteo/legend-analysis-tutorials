@@ -72,7 +72,7 @@ lh5.load_nda(f_list, par_list, tb_in)
 These will take a file list which may include wildcards for example `th_HS2_lat_psa/th_HS2_lat_psa/*.lh5`. They will return all the values in all the files for the parameters specified either as a dictionary of arrays or as a dataframe.
 
 ```py
-lh5.Table.get_dataframe(get_dataframe(self, *cols, copy=False))
+lh5.Table.get_dataframe(get_dataframe(*cols, copy=False))
 ```
 Useful for dsp data where the format will generally be a table. 
 
