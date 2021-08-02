@@ -56,7 +56,16 @@ After setting the ssh config file above, you can open a notebook on pc204 using 
 ```console
 ssh pc204 -L MYPORT:localhost:MYPORT  'PYTHONUSERBASE=/unix/legend/software/pygama-v01/local singularity run  -B /run/user/$(id -u) -B /unix /unix/legend/software/containers/this.sif jupyter lab --no-browser --notebook-dir /unix/legend --port MYPORT --port-retries 0'
 ```
-where MYPORT is a number of 4 digits above 8800. 
+where MYPORT is a number of 4 digits above 8800. If you see the error message:
+
+```console
+ERROR: the notebook server could not be started because port PORT2 is not available
+```
+it is because you have a Jupyter kernel already runnig. In this case, you can either connect to pc204 and kill it, or kill it through ssh using a command such as:
+
+```console
+ssh pc204 "killall -9 jupyter-lab"
+```
 
 ###  If your local machine is a linux system (Version 10)
 Open two powershells. In the first one run the command
@@ -69,12 +78,16 @@ to esablish an port forwarding of the ssh port of pc204 on your local host. Then
 ```console
 ssh -p PORT1 username@localhost -L PORT2:localhost:PORT2 "PYTHONUSERBASE=/unix/legend/software/pygama-v01/local singularity run -B /unix /unix/legend/software/containers/this.sif jupyter lab --no-browser --notebook-dir /home/username --port PORT2 --port-retries 0"
 ```
-In the commands above, you must replace PORT1 and PORT2 with two numbers of 4 digits above 8800 and username with your linux username on the UCL hep cluster.
+In the commands above, you must replace PORT1 and PORT2 with two numbers of 4 digits above 8800 and username with your linux username on the UCL hep cluster. If you see the error message:
 
-### ERROR: the notebook server could not be started because port ???? is not available
-If you see this error, it is because you have a Jupyter kernel runnig already. In this case, you can either connect to pc204 and kill it, or kill it through ssh using a command such as:
+```console
+ERROR: the notebook server could not be started because port PORT2 is not available
+```
+it is because you have a Jupyter kernel already runnig. In this case, you can either connect to pc204 and kill it, or kill it through ssh using a command such as:
 
-ssh -p PORT1 username@localhost -L PORT2:localhost:PORT2 "ssh -p PORT1 username@localhost -L PORT2:localhost:PORT2 "pkill -u username" 
+```console
+ssh -p PORT1 username@localhost "killall -9 jupyter-lab"
+```
 
 
 
