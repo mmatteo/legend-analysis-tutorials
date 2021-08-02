@@ -2,7 +2,7 @@
 
 Here is an example processing chain for raw to dsp. 
 
-```
+```json
 {
   "outputs": [
     "bl", "bl_sig", "trapEmax"
