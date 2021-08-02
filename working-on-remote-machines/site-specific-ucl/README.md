@@ -57,7 +57,7 @@ Info on the software versions available can be found in `/unix/legend/software/R
 After setting the ssh config file above, you can open a notebook on pc204 using this command:
 
 ```console
-ssh pc204 -L MYPORT:localhost:MYPORT  'PYTHONUSERBASE=/unix/legend/software/pygama-v01/local singularity run  -B /run/user/$(id -u) -B /unix /unix/legend/software/containers/this.sif jupyter lab --no-browser --notebook-dir /unix/legend --port MYPORT --port-retries 0'
+ssh pc204 -L MYPORT:localhost:MYPORT  'PYTHONUSERBASE=/unix/legend/software/pygama-v01/local singularity run  -B /run/user/$(id -u) -B /unix /unix/legend/software/containers/this.sif jupyter lab --no-browser --notebook-dir /home/username --port MYPORT --port-retries 0'
 ```
 where MYPORT is a number of 4 digits above 8800. If you see the error message:
 
