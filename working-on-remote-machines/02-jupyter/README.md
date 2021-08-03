@@ -1,7 +1,7 @@
-# jupyter lab and notebooks
+# Jupyter lab and notebooks
 
-To start a jupyter lab session on the local machine using a certain container and software
-installation directory use:
+To start a [jupyter lab](https://jupyter.org/) session on the local machine using a certain
+container and software installation directory use:
 
 ```
 PYTHONUSERBASE=/path/to/installation/dir \
