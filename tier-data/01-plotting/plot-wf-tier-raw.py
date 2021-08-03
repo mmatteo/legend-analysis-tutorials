@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
-import pygama.io.lh5 as lh5
+import pygama.lh5 as lh5
 import numpy as np
 
 f_raw = f'tier1.lh5'
 
 sto = lh5.Store()
-tb_data, n_rows = sto.read_object('/raw', f_raw,30)
+tb_data, n_rows = sto.read_object('/raw', f_raw, 30)
 
 wfs_all = tb_data['waveform']['values'].nda
 wf0 = wfs_all[0, :]
