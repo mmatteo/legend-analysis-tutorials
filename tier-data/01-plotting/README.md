@@ -11,7 +11,6 @@ import numpy as np
 f_raw = f'tier1.lh5'
 
 sto = lh5.Store()
-tb_data, n_rows = sto.read_object('/raw', f_raw, 30)
 
 wfs_all = sto.read_object('/raw/waveform/values', f_raw, 30)[0].nda
 wf0 = wfs_all[0, :]
