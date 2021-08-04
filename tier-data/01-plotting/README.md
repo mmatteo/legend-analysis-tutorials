@@ -13,7 +13,7 @@ f_raw = f'tier1.lh5'
 sto = lh5.Store()
 tb_data, n_rows = sto.read_object('/raw', f_raw, 30)
 
-wfs_all = tb_data['waveform']['values'].nda
+wfs_all = sto.read_object('/raw/waveform/values', f_raw, 30)[0].nda
 wf0 = wfs_all[0, :]
 ts = np.arange(0, wf0.shape[0], 1)
 plt.plot(ts[:], wf0[:])
