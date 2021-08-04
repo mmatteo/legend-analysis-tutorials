@@ -18,7 +18,7 @@ about the processing e.g cputime etc. `raw` contains the data for each waveform.
 All the parameters are shown below:
 
 ```console
-raw.lh5
+$ raw.lh5
 ├── stat
 └── raw
      ├── baseline    # FPGA-estimated baseline
@@ -46,7 +46,7 @@ change if you output parameters with other datatypes such as the `'wf_trap'`.
 An example is shown below:
 
 ```console
-dps.lh5
+$ dps.lh5
 ├── dsp_info
 └── raw
      ├──  bl
@@ -112,8 +112,17 @@ These will take a file list which may include wildcards (e.g.
 the files for the parameters specified either as a dictionary of NumPy arrays
 or as a Pandas dataframe. the `par_list` argument must be used to specify which
 columns to read from the table on disk. For example:
-```py
-lh5.load_nda(f_raw, ('baseline', 'channel', 'waveform/values'), '/raw')
+```pycon
+>>> lh5.load_nda(f_raw, ('baseline', 'channel', 'waveform/values'), '/raw')
+{'baseline': array([ 5018,  5026, 10358, ..., 10457,  4972,  5008], dtype=uint16),
+ 'channel': array([24, 24, 19, ...,  4, 24, 28], dtype=uint32),
+ 'waveform/values': array([[ 5036,  5036,  5038, ...,  5064,  5066,  5065],
+        [ 5036,  5036,  5027, ...,  5045,  5049,  5061],
+        [10354, 10354, 10357, ..., 10336, 10348, 10349],
+        ...,
+        [10392, 10392, 10391, ..., 10380, 10380, 10381],
+        [ 4956,  4956,  4954, ...,  4942,  4927,  4948],
+        [ 5005,  5005,  5005, ...,  5011,  5003,  5003]], dtype=uint16)}
 ```
 
 `lh5.Table.get_dataframe(get_dataframe(*cols, copy=False))` is useful for `dsp`
