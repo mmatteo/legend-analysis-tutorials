@@ -8,45 +8,40 @@ tutorial](https://github.com/mmatteo/legend-analysis-tutorials/tree/main/run-pro
 ```json
 {
   "outputs": [
-    "bl_mean", "bl_sig", "trapEmax"
+    "timestamp", "bl_mean", "bl_std", "trapEmax"
   ],
   "processors":{
     "wf_blsub":{
       "function": "bl_subtract",
       "module": "pygama.dsp.processors",
       "args": ["waveform", "baseline", "wf_blsub"],
-      "prereqs": ["waveform", "baseline"],
       "unit": "ADC"
     },
     "bl_mean , bl_std, bl_slope, bl_intercept":{
       "function": "linear_slope_fit",
       "module": "pygama.dsp.processors",
       "args" : ["wf_blsub[0: 1650]", "bl_mean","bl_std", "bl_slope","bl_intercept"],
-      "prereqs": ["wf_blsub"],
       "unit": ["ADC","ADC","ADC","ADC"]
     },
     "wf_pz": {
       "function": "pole_zero",
       "module": "pygama.dsp.processors",
       "args": ["wf_blsub", "db.pz.tau", "wf_pz"],
-      "prereqs": ["wf_blsub"],
       "unit": "ADC",
-      "defaults": { "db.pz.tau":"260*us" }
+      "defaults": { "db.pz.tau": "260*us" }
     },
     "wf_trap": {
       "function": "trap_norm",
       "module": "pygama.dsp.processors",
       "args": ["wf_pz", "8*us", "2*us", "wf_trap"],
-      "prereqs": ["wf_pz"],
       "unit": "ADC"
     },
     "trapEmax": {
       "function": "amax",
       "module": "numpy",
       "args": ["wf_trap", 1, "trapEmax"],
-      "kwargs": {"signature":"(n),()->()", "types":["fi->f"]},
-      "unit": "ADC",
-      "prereqs": ["wf_trap"]
+      "kwargs": {"signature": "(n),()->()", "types": ["fi->f"]},
+      "unit": "ADC"
     }
   }
 }
@@ -56,8 +51,8 @@ At the top we first specify the final outputs of processing the data. In this
 case we have the mean and standard deviation of the baseline and the energy.
 Outputs from other processors or data fields from the `raw` file can be added
 here (e.g. `baseline`), if you want to forward them to the `dsp` tier. For
-example we could add `"wf_trap"` here to check if the pole zero is being
-applied correctly.
+example we could add `"wf_trap"` here to check if the pole zero correction is
+being applied correctly.
 
 The next JSON block `"processors"` defines the processors themselves, arranged
 in a chain.  Each processor name is defined by the outputs (fields in
@@ -72,4 +67,5 @@ and outputs of the function are specified.  As it can be seen in the first
 processor it is also possible to take slices of the input to be processed. The
 units of the input can also be specified as in the `"wf_trap"`.  The last field
 is `"prereqs"` which defines the inputs the processor depends on (without any
-slicing).
+slicing). It is an optional field, since pygama is able to autonomously
+establish the processor dependencies. Use it only if you know what you are doing.
